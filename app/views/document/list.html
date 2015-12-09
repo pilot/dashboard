@@ -33,7 +33,7 @@
 
             <div ng-repeat="agg in aggregations | orderObjectBy: 'sort'">
                 <h4 class="subtitle mb5">{{ agg.title }}</h4>
-                <ul class="nav nav-sr" style="max-height: 300px; overflow: scroll;">
+                <ul class="nav nav-sr" style="max-height: 300px; overflow: auto;">
                     <li ng-repeat="bucket in agg.buckets">
                     <div class="checkbox block" style="margin-top: 0; margin-bottom: 0;">
                         <!--<label><input type="checkbox" ng-disabled="agg.type === 'geo_distance'" checklist-change="changeAggs(agg.name, bucket.key)" checklist-model="filters[agg.name]" checklist-value="bucket.key"> {{ bucket.key }} ({{ bucket.doc_count }})</label>-->
