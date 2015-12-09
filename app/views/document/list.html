@@ -70,8 +70,6 @@
                         <span ng-repeat="filter in agg_types" class="label label-default">{{ filter }}<span ng-click="removeFilter(k, filter)" style="cursor: pointer;" class="glyphicon glyphicon-remove"></span></span>
                     </span>
 
-
-
                     <div class="mb20"></div>
 
                     <div class="box"> 
@@ -92,9 +90,9 @@
                                         <span ng-if="n.display === 'string' || n.display === 'integer'">{{ row[n.name] }}</span>
                                         <span ng-if="n.display === 'array'">{{ row[n.name].join(', ')}}{{  }}</span>
                                     </td> -->
-                                    <td style="width: 200px; text-align: center;">
+                                    <!-- <td style="width: 200px; text-align: center;">
                                         <img src="{{ row['image_link'] }}" style="max-height: 200px; max-width: 200px;" />
-                                        </td>
+                                    </td> -->
                                     <td style="vertical-align: middle;">
                                         <a href="{{ row['url'] }}" target="_blank"><span style="font-size: 18px;">{{ row['name'] }}</span></a>
                                         <br />
