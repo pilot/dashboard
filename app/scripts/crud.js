@@ -21,6 +21,6 @@ angular.module('my-crud', [
     extendPagination: function(data) {
       this.pagination = _.extend(this.pagination, data);
     },
-    pagination: {page: 1, limit: 12}
+    pagination: {page: 1, limit: 18}
   };
 }]);
