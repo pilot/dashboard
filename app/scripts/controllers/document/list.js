@@ -9,6 +9,7 @@ angular.module('itemsapi')
 
   $scope.pagination.query = $stateParams.query;
   $scope.name = $stateParams.name;
+  console.log($stateParams.name);
   $scope.pagination.sort = $stateParams.sort || 'default';
 
 
@@ -19,13 +20,13 @@ angular.module('itemsapi')
   })
   .value();
 
-  console.log('explainQuery');
-  console.log($scope.explainQuery);
+  // console.log('explainQuery');
+  // console.log($scope.explainQuery);
 
-  console.log('pagination load');
-  console.log($scope.pagination);
-  console.log('state params');
-  console.log($stateParams);
+  // console.log('pagination load');
+  // console.log($scope.pagination);
+  // console.log('state params');
+  // console.log($stateParams);
 
 
   //console.log($state.current);
@@ -38,7 +39,7 @@ angular.module('itemsapi')
 
   $scope.aggregations = {};
 
-  console.log($stateParams.aggs);
+  // console.log($stateParams.aggs);
 
   if ($stateParams.aggs) {
     $scope.filters = JSON.parse($stateParams.aggs);
@@ -49,8 +50,8 @@ angular.module('itemsapi')
   $scope.pagination.aggs = $scope.filters;
   //, $stateParams.aggs
   //$scope.filters = _.extend({}, {tags_terms: []});
-  console.log('filters');
-  console.log($scope.filters);
+  // console.log('filters');
+  // console.log($scope.filters);
 
   var name = $stateParams.name;
 
@@ -64,32 +65,32 @@ angular.module('itemsapi')
       $scope.aggregations = data.aggregations;
       $scope.sortings = _.extend(data.sortings, defaultSort);
       $scope.meta = res.meta;
-      console.log(res.meta);
+      // console.log(res.meta);
       $scope.sorting = data.sortings[$scope.pagination.sort] || defaultSort
       //$scope.sortings = [{title: 'Default', name: 'default'}].concat(data.sortings);
     });
   }
   $scope.updateAggs = function() {
-    console.log($scope.aggs);
+    // console.log($scope.aggs);
   }
 
   getRows();
 
   $scope.removeFilter = function(key, value) {
-    console.log('remove filter');
-    console.log(key, value);
+    // console.log('remove filter');
+    // console.log(key, value);
     //delete $scope.filters[key][value];
     $scope.filters[key].splice($scope.filters[key].indexOf(value), 1);
-    console.log($scope.filters);
+    // console.log($scope.filters);
     $state.go($state.current.name, _.extend(
       Pagination.pagination, {aggs: JSON.stringify($scope.filters)}
     ));
   }
 
   $scope.changeAggs = function(aggsName, optionsName) {
-    console.log('change aggs');
-    console.log(aggsName, optionsName);
-    console.log($scope.filters);
+    // console.log('change aggs');
+    // console.log(aggsName, optionsName);
+    // console.log($scope.filters);
     //Pagination.extendPagination({page: 1, query: $scope.pagination.query});
     $state.go($state.current.name, _.extend(
       Pagination.pagination, {aggs: JSON.stringify($scope.filters)}
@@ -97,11 +98,11 @@ angular.module('itemsapi')
   }
 
   $scope.changeQuery = function() {
-    console.log('change query');
-    console.log(Pagination.pagination);
+    // console.log('change query');
+    // console.log(Pagination.pagination);
     Pagination.extendPagination({page: 1, query: $scope.pagination.query});
-    console.log('options');
-    console.log(_.extend(Pagination.pagination, {}));
+    // console.log('options');
+    // console.log(_.extend(Pagination.pagination, {}));
     $state.go($state.current.name, _.extend(
       Pagination.pagination, {aggs: JSON.stringify($scope.filters)}
     ));
@@ -113,10 +114,10 @@ angular.module('itemsapi')
   });
 
   $scope.setPage = function(page) {
-    console.log('set page');
-    console.log(Pagination);
-    console.log($scope.pagination);
-    console.log(page);
+    // console.log('set page');
+    // console.log(Pagination);
+    // console.log($scope.pagination);
+    // console.log(page);
     Pagination.extendPagination({page: $scope.pagination.page});
     $scope.explainQuery.page = $scope.pagination.page;
     getRows();

@@ -9,8 +9,8 @@ angular.module('my-crud', [
       var self = this;
 
       var rowsApi = Restangular.all(resource);
-      console.log('pagionation options');
-      console.log(self.pagination);
+      // console.log('pagionation options');
+      // console.log(self.pagination);
       rowsApi.getList(_.extend({page: self.pagination.page, per_page: self.pagination.limit }, self.pagination)).then(function(data) {
         self.extendPagination({count: parseInt(data.pagination.total)});
         success(data);
