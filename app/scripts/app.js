@@ -66,7 +66,7 @@ angular.module('itemsapi', [
   //   templateUrl: 'views/collection/list.html'
   // })
   .state('home', {
-    url: '/:name?page&limit&query&sort&aggs',
+    url: '/?page&limit&query&sort&aggs',
     params: {
       name: 'products_api',
     },
