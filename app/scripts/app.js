@@ -59,11 +59,20 @@ angular.module('itemsapi', [
     },
     controller: 'GlobalCtrl'
   })
+  // .state('home', {
+  //   url: '/',
+  //   parent: 'abstract',
+  //   controller: 'CollectionListController',
+  //   templateUrl: 'views/collection/list.html'
+  // })
   .state('home', {
-    url: '/',
+    url: '/:name?page&limit&query&sort&aggs',
+    params: {
+      name: 'products_api',
+    },
     parent: 'abstract',
-    controller: 'CollectionListController',
-    templateUrl: 'views/collection/list.html'
+    controller: 'DocumentListController',
+    templateUrl: 'views/document/list.html'
   })
   .state('collections', {
     url: '/collections',
