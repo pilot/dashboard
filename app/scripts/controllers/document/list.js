@@ -9,7 +9,7 @@ angular.module('itemsapi')
 
   $scope.pagination.query = $stateParams.query;
   $scope.name = $stateParams.name;
-  console.log($stateParams.name);
+  
   $scope.pagination.sort = $stateParams.sort || 'default';
 
 
